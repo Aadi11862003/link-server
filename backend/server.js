@@ -3,6 +3,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './database/db.js';
 import authRoutes from './routes/auth.js';
+import bookmarkRoutes from './routes/bookmark.js';
+
 
 dotenv.config();
 const app = express();
@@ -13,6 +15,8 @@ app.use(cors());
 
 // calling api
 app.use('/api/auth',authRoutes);
+
+app.use('/api/bookmark',bookmarkRoutes);
 
 connectDB();
 
