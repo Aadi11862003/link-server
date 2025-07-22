@@ -13,12 +13,19 @@ app.use(express.json());
 app.use(cors());
 
 
+connectDB();
+
+
 // calling api
 app.use('/api/auth',authRoutes);
 
 app.use('/api/bookmark',bookmarkRoutes);
 
-connectDB();
+
+// calling all bookmarks
+//app.use('/api/bookmarks', bookmarkRoutes); 
+
+
 
 app.listen(port,()=>{
     console.log(`server is started on port ${port}`);
